@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using RPGConsole.Project;
+using RPGConsole.Project.Misc;
 
 
 namespace RPGConsole
@@ -9,7 +11,11 @@ namespace RPGConsole
         static Game Game;
         static void Main(string[] args)
         {
-            Game = new Game();
+            Console.WriteLine(Asker.AskEntry("Veuillez saisir un nom"));
+
+            int Answer =Asker.AskChoice(new List<string>() { "Barbarian", "Knight", "Mage", "Rogue" }, "Choisissez votre classe");
+
+            //Game = new Game();
             //Game.Init();
         }
     }
