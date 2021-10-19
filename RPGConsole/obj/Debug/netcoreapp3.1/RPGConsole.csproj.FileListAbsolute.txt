@@ -1,0 +1,14 @@
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.exe
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.deps.json
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.runtimeconfig.json
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.runtimeconfig.dev.json
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.dll
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.pdb
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.csproj.AssemblyReference.cache
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.AssemblyInfoInputs.cache
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.AssemblyInfo.cs
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.csproj.CoreCompileInputs.cache
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.dll
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.pdb
+C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.genruntimeconfig.cache
