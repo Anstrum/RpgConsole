@@ -13,6 +13,7 @@ namespace RPGConsole.Project.Misc
             int Selector = 0;
             do
             {
+                Console.Clear();
                 Console.WriteLine(Question);
                 for(int i = 0; i < Choices.Count; i++)
                 {
