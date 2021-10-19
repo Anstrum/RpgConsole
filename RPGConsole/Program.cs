@@ -46,7 +46,7 @@ namespace RPGConsole
 
             int Length = 0;
 
-            switch(Asker.AskChoice(new List<string>() { "10 Rooms", "30 Rooms", "50 Rooms" }, "Choose a game length"))
+            switch(Asker.AskChoice(new List<string>() { "20 Rooms", "50 Rooms", "100 Rooms" }, "Choose a game length"))
             {
                 case 0: case 1: case 2:
                     Length = 10;

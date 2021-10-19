@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGConsole.Project.Units.Ennemies.Characters
+namespace RPGConsole.Project.Areas
 {
-    class Knight : Character
+    class City
     {
     }
 }

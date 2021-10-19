@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPGConsole.Project.Items.Equipments
 {
-    class Helmet
+    class Helmet : Armor
     {
     }
 }
