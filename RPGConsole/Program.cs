@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using RPGConsole.Project;
+using RPGConsole.Project.Enums;
 using RPGConsole.Project.Misc;
 
 
@@ -11,17 +12,37 @@ namespace RPGConsole
         static Game Game;
         static void Main(string[] args)
         {
+            if(Asker.AskChoice(new List<string>() {"Oui", "Non"}, "Voulez vous activer le débug ?") == 0)
+            {
+                Debug.Activate();
+            }
+
+
+
             Game = new Game();
-
-            Console.WriteLine("Game: " + Game.Name);
-            Asker.WaitKey();
-
-            int Difficulty = Asker.AskChoice(new List<string>() {"Easy", "Normal", "Hard"}, "Choose a difficulty");
+            string Name = Asker.AskEntry("Enter game name");
             Console.Clear();
 
-            Console.WriteLine("Game: " + Game.Name);
-            Console.WriteLine("Difficulty: " + Difficulty);
-            Asker.WaitKey();
+
+            DifficultyLevel Difficulty;
+                
+            switch(Asker.AskChoice(new List<string>() {"Easy", "Normal", "Hard"}, "Choose a difficulty"))
+            {
+                case 0:
+                    Difficulty = DifficultyLevel.Easy;
+                    break;
+                case 1:
+                    Difficulty = DifficultyLevel.Medium;
+                    break;
+                case 2:
+                    Difficulty = DifficultyLevel.Hard;
+                    break;
+
+                default:
+                    Difficulty = DifficultyLevel.Medium;
+                    break;
+            }
+            Console.Clear();
 
             int Length = 0;
 
@@ -33,12 +54,14 @@ namespace RPGConsole
             }
             Console.Clear();
 
-            Console.WriteLine("Game: " + Game.Name);
+            Console.WriteLine("Game: " + Name);
             Console.WriteLine("Difficulty: " + Difficulty);
             Console.WriteLine("Length: " + Length);
             Asker.WaitKey();
+            Console.Clear();
 
-            Game.Init(Asker.AskEntry("Enter game name"), Length, Difficulty);
+            Game.Init(Name, Difficulty, Length);
+            Debug.Print("Game Init Success");
         }
     }
 }
