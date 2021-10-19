@@ -11,28 +11,34 @@ namespace RPGConsole
         static Game Game;
         static void Main(string[] args)
         {
-            Console.WriteLine(Asker.AskEntry("Veuillez saisir un nom"));
+            Game = new Game();
 
-            int Answer = Asker.AskChoice(new List<string>() { "Barbarian", "Knight", "Mage", "Rogue" }, "Choisissez votre classe");
+            Console.WriteLine("Game: " + Game.Name);
+            Asker.WaitKey();
+
+            int Difficulty = Asker.AskChoice(new List<string>() {"Easy", "Normal", "Hard"}, "Choose a difficulty");
             Console.Clear();
-            Console.Write("Vous avez choisi la classe ");
-            switch(Answer)
+
+            Console.WriteLine("Game: " + Game.Name);
+            Console.WriteLine("Difficulty: " + Difficulty);
+            Asker.WaitKey();
+
+            int Length = 0;
+
+            switch(Asker.AskChoice(new List<string>() { "10 Rooms", "30 Rooms", "50 Rooms" }, "Choose a game length"))
             {
-                case 0:
-                    Console.WriteLine("Barbare");
-                    break;
-                case 1:
-                    Console.WriteLine("Knight");
-                    break;
-                case 2:
-                    Console.WriteLine("Mage");
-                    break;
-                case 3:
-                    Console.WriteLine("Rogue");
+                case 0: case 1: case 2:
+                    Length = 10;
                     break;
             }
-            //Game = new Game();
-            //Game.Init();
+            Console.Clear();
+
+            Console.WriteLine("Game: " + Game.Name);
+            Console.WriteLine("Difficulty: " + Difficulty);
+            Console.WriteLine("Length: " + Length);
+            Asker.WaitKey();
+
+            Game.Init(Asker.AskEntry("Enter game name"), Length, Difficulty);
         }
     }
 }

@@ -29,6 +29,7 @@ namespace RPGConsole.Project.Misc
                 }
                 KeyEntered = Console.ReadKey().Key;
 
+
                 if (KeyEntered == ConsoleKey.Z || KeyEntered == ConsoleKey.UpArrow)
                 {
                     Selector--;
@@ -61,8 +62,10 @@ namespace RPGConsole.Project.Misc
             bool Confirmed = false;
             do
             {
+                Console.Clear();
                 Console.WriteLine(Question);
                 Answer = Console.ReadLine();
+                Console.Clear();
                 Confirmed = ConfirmChoice();
             }
             while (!Confirmed);
@@ -79,6 +82,7 @@ namespace RPGConsole.Project.Misc
 
             do
             {
+                Console.Clear();
                 Console.WriteLine("Êtes vous sur de votre choix ?");
                 for (int i = 0; i < Choices.Count; i++)
                 {
@@ -94,6 +98,7 @@ namespace RPGConsole.Project.Misc
                 }
 
                 KeyEntered = Console.ReadKey().Key;
+
                 if (KeyEntered == ConsoleKey.S || KeyEntered == ConsoleKey.DownArrow)
                 {
                     Selector++;
@@ -110,7 +115,6 @@ namespace RPGConsole.Project.Misc
                         Selector = 0;
                     }
                 }
-                Console.Clear();
             } while (KeyEntered != ConsoleKey.Enter && KeyEntered != ConsoleKey.Spacebar);
 
             if (Selector == 0)
@@ -118,6 +122,12 @@ namespace RPGConsole.Project.Misc
                 return true;
             }
             return false;
+        }
+
+        public static void WaitKey()
+        {
+            Console.WriteLine("\n\n\tAppuyez sur une touche pour continuer...");
+            Console.ReadKey();
         }
     }
 }

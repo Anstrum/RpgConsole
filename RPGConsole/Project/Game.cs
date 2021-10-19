@@ -10,23 +10,20 @@ namespace RPGConsole.Project
 {
     class Game
     {
-        List<Character> Characters = new List<Character>();
+        public string Name;
+        private bool Ended;
+        private List<Character> Characters = new List<Character>();
+        private Map Map;
+
+
         public Game()
         {
-            Knight Nanaka = new Knight();
-            Character Wishk = new Barbarian();
-            Character Xfactors = new Mage();
-            Character Jaetan = new Rogue();
-            Map Map = new Map();
         }
 
 
-        public void Init(string GameDuration, int Difficulty, int CharacterAmount)
+        public void Init(string Name, int GameDuration, int Difficulty)
         {
-            for(int i = 0; i < CharacterAmount; i++)
-            {
-
-            }
+            this.Name = Name;
         }
     }
 }
