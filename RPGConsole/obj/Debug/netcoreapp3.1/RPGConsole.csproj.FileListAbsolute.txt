@@ -12,3 +12,16 @@ C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj
 C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.dll
 C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.pdb
 C:\Users\Nanaka\Desktop\Professionnel\Ynov\Cours\B2\C#\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.genruntimeconfig.cache
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.exe
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.deps.json
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.runtimeconfig.json
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.runtimeconfig.dev.json
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.dll
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\bin\Debug\netcoreapp3.1\RPGConsole.pdb
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.csproj.AssemblyReference.cache
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.AssemblyInfoInputs.cache
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.AssemblyInfo.cs
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.csproj.CoreCompileInputs.cache
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.dll
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.pdb
+C:\Users\cyril\Desktop\RpgConsole\RPGConsole\obj\Debug\netcoreapp3.1\RPGConsole.genruntimeconfig.cache

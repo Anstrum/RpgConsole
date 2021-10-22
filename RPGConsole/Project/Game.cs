@@ -36,7 +36,24 @@ namespace RPGConsole.Project
             //Map = new Map(GameDuration);
 
             CreateCharacters(Asker.AskChoice(new List<string>() { "1", "2", "3", "4"}, "Select team size:") + 1);
+            foreach(Character Character in Characters)
+            {
+                Console.WriteLine("Character: " + Character.GetName());
+                Console.WriteLine("Class: " + Character.GetClass());
+                Console.WriteLine("Weapon: " + Character.GetWeaponClass());
+                Asker.WaitKey();
+                Console.Clear();
 
+                List<string> Choices = new List<string>();
+                foreach(KeyValuePair<string, WeaponClass> Weapon in Weapons.WeaponList)
+                {
+                    if(Weapon.Value == Character.GetWeaponClass())
+                    {
+                        Choices.Add(Weapon.Key);
+                    }
+                }
+                int Answer = Asker.AskChoice(Choices, "Select your Weapon");
+            }
 
 
 

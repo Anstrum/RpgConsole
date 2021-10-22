@@ -20,5 +20,21 @@ namespace RPGConsole.Project.Units
             Experience = 0;
             ExperienceToMax = 2.5 * (Level * Level * Level) - 5 * (Level * Level) + 200 * Level - 140 ;
         }
+
+    #region Getter
+        public string GetName()
+        {
+            return Name;
+        }
+        public CharacterClass GetClass()
+        {
+            return Class;
+        }
+        public WeaponClass GetWeaponClass()
+        {
+            return WeaponClass;
+        }
+
+    #endregion
     }
 }

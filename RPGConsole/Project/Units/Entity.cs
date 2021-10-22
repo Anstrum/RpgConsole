@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using RPGConsole.Project.Effects;
+using RPGConsole.Project.Spells;
 using RPGConsole.Project.Items;
 using RPGConsole.Project.Items.Equipments;
 
@@ -23,12 +24,16 @@ namespace RPGConsole.Project.Units
         protected List<Effect> Effects;
         protected List<Item> Items;
         protected List<Armor> Equipment;
+        protected List<Spell> Spells;
+
+        protected bool IsConfused;
 
         public Entity(string Name, int Level)
         {
             Items = new List<Item>();
             Effects = new List<Effect>();
             Equipment = new List<Armor>();
+            Spells = new List<Spell>();
             this.Name = Name;
             this.Level = Level;
         }

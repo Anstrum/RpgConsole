@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGConsole.Project.Effects
+namespace RPGConsole.Project.Effects.Applicators
 {
-    class Blessed : Effect
+    class Applicator
     {
     }
 }

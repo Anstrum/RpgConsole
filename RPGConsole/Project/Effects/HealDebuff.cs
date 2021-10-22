@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGConsole.Project.Items.Equipments
+namespace RPGConsole.Project.Effects
 {
-    class Armor : Item
+    class HealDebuff
     {
-
     }
 }
