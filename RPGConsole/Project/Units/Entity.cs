@@ -6,6 +6,7 @@ using RPGConsole.Project.Effects;
 using RPGConsole.Project.Spells;
 using RPGConsole.Project.Items;
 using RPGConsole.Project.Items.Equipments;
+using RPGConsole.Project.Enums;
 
 namespace RPGConsole.Project.Units
 {
@@ -28,6 +29,8 @@ namespace RPGConsole.Project.Units
         protected List<Armor> Equipments;
         protected List<Spell> Spells;
 
+        protected Weapon Weapon;
+
         protected bool Confused;
 
 
@@ -46,9 +49,13 @@ namespace RPGConsole.Project.Units
         public List<Armor> GetEquipment() { return Equipments; }
         public List<Spell> GetSpells() { return Spells; }
         public bool IsConfused() { return Confused; }
+        public Weapon GetWeapon() { return Weapon; }
         #endregion
         #region Stats Setters
-
+        public void SetWeapon(string WeaponType, WeaponClass Class) 
+        { 
+            this.Weapon.Init(WeaponType, Class); 
+        }
         #endregion
 
 
@@ -61,6 +68,7 @@ namespace RPGConsole.Project.Units
             Effects = new List<Effect>();
             Equipments = new List<Armor>();
             Spells = new List<Spell>();
+            Weapon = new Weapon();
             this.Name = Name;
             this.Level = Level;
         }

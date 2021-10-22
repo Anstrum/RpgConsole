@@ -10,7 +10,9 @@ namespace RPGConsole.Project.Units.Class
     {
         public Knight(string Name) : base(Name)
         {
-
+            WeaponClass.Add(Enums.WeaponClass.OneHanded);
+            WeaponClass.Add(Enums.WeaponClass.TwoHanded);
+            WeaponClass.Add(Enums.WeaponClass.Ranged);
         }
     }
 }

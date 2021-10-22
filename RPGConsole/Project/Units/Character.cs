@@ -15,6 +15,7 @@ namespace RPGConsole.Project.Units
 
         public Character(string Name) : base(Name, 1)
         {
+            WeaponClass = new List<WeaponClass>();
             Experience = 0;
             ExperienceToMax = 2.5 * (Level * Level * Level) - 5 * (Level * Level) + 200 * Level - 140 ;
         }

@@ -4,7 +4,12 @@ using System.Text;
 
 namespace RPGConsole.Project.Units.Class
 {
-    class Paladin
+    class Paladin : Character
     {
+        public Paladin(string Name) : base(Name)
+        {
+            WeaponClass.Add(Enums.WeaponClass.Magical);
+            WeaponClass.Add(Enums.WeaponClass.TwoHanded);
+        }
     }
 }
