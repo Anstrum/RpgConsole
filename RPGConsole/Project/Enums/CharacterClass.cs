@@ -6,9 +6,16 @@ namespace RPGConsole.Project.Enums
 {
     public enum CharacterClass
     {
+        Alchemist,
         Barbarian,
+        Blacksmith,
+        Hunter,
         Knight,
         Mage,
-        Rogue
+        Mystic,
+        Necromancer,
+        Paladin,
+        Priest,
+        Trapper,
     }
 }

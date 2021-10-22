@@ -34,92 +34,34 @@ namespace RPGConsole.Project
             this.Name = Name;
             this.Difficulty = Difficulty;
             //Map = new Map(GameDuration);
+            for(int i = 0; i < Asker.AskChoice(new List<string>() { "1", "2", "3", "4" }, "Select team size:") + 1;  i++)
+            {
+                Console.Clear();
 
-            CreateCharacters(Asker.AskChoice(new List<string>() { "1", "2", "3", "4"}, "Select team size:") + 1);
-            foreach(Character Character in Characters)
+                Console.WriteLine("Character " + i + 1 + " Create your character");
+                Asker.WaitKey();
+                Console.Clear();
+                CreateCharacter();
+            }
+
+            Console.Clear();
+
+            foreach (Character Character in Characters)
             {
                 Console.WriteLine("Character: " + Character.GetName());
                 Console.WriteLine("Class: " + Character.GetClass());
                 Console.WriteLine("Weapon: " + Character.GetWeaponClass());
                 Asker.WaitKey();
                 Console.Clear();
-
-                List<string> Choices = new List<string>();
-                foreach(KeyValuePair<string, WeaponClass> Weapon in Weapons.WeaponList)
-                {
-                    if(Weapon.Value == Character.GetWeaponClass())
-                    {
-                        Choices.Add(Weapon.Key);
-                    }
-                }
-                int Answer = Asker.AskChoice(Choices, "Select your Weapon");
             }
-
-
-
         }
 
 
-        void CreateCharacters(int TeamLength)
+        void CreateCharacter()
         {
-            for(int i = 1; i <= TeamLength; i++)
-            {
-                string Name = Asker.AskEntry("Character " + i + " enter your name:");
-                CharacterClass Class;
-                WeaponClass WeaponClass;
-
-                switch (Asker.AskChoice(new List<string>() { CharacterClass.Barbarian.ToString(), CharacterClass.Knight.ToString(), CharacterClass.Mage.ToString(), CharacterClass.Rogue.ToString() }, "Character " + i + " select your class"))
-                {
-                    case 0:
-                        Class = CharacterClass.Barbarian;
-                        break;
-                    case 1:
-                        Class = CharacterClass.Knight;
-                        break;
-                    case 2:
-                        Class = CharacterClass.Mage;
-                        break;
-                    case 3:
-                        Class = CharacterClass.Rogue;
-                        break;
-                    default:
-                        Class = CharacterClass.Knight;
-                        break;
-                }
-                switch (Asker.AskChoice(new List<string>() { WeaponClass.Ranged.ToString(), WeaponClass.TwoHanded.ToString(), WeaponClass.OneHanded.ToString(), WeaponClass.Magical.ToString() }, "Character " + i + " select your weapon speciality"))
-                {
-                    case 0:
-                        WeaponClass = WeaponClass.Ranged;
-                        break;
-                    case 1:
-                        WeaponClass = WeaponClass.TwoHanded;
-                        break;
-                    case 2:
-                        WeaponClass = WeaponClass.OneHanded;
-                        break;
-                    case 3:
-                        WeaponClass = WeaponClass.Magical;
-                        break;
-                    default:
-                        WeaponClass = WeaponClass.OneHanded;
-                        break;
-                }
-                switch(Class)
-                {
-                    case CharacterClass.Barbarian:
-                        Characters.Add(new Barbarian(Name, WeaponClass));
-                        break;
-                    case CharacterClass.Knight:
-                        Characters.Add(new Knight(Name, WeaponClass));
-                        break;
-                    case CharacterClass.Mage:
-                        Characters.Add(new Mage(Name, WeaponClass));
-                        break;
-                    case CharacterClass.Rogue:
-                        Characters.Add(new Rogue(Name, WeaponClass));
-                        break;
-                }
-            }
+            Console.WriteLine(Enum.GetNames(typeof(CharacterClass)));
+            string Name = Asker.AskEntry("Enter your name:");
+            CharacterClass Class;
         }
     }
 }

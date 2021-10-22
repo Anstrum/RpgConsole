@@ -8,7 +8,7 @@ namespace RPGConsole.Project.Units.Class
 {
     class Knight : Character
     {
-        public Knight(string Name, WeaponClass WeaponClass) : base(Name, CharacterClass.Barbarian, WeaponClass)
+        public Knight(string Name) : base(Name)
         {
 
         }

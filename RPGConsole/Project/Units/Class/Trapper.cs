@@ -6,9 +6,9 @@ using RPGConsole.Project.Enums;
 
 namespace RPGConsole.Project.Units.Class
 {
-    class Rogue : Character
+    class Trapper : Character
     {
-        public Rogue(string Name, WeaponClass WeaponClass) : base(Name, CharacterClass.Barbarian, WeaponClass)
+        public Trapper(string Name) : base(Name)
         {
 
         }

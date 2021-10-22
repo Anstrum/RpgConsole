@@ -14,7 +14,9 @@ namespace RPGConsole.Project.Units
         protected string Name;
         protected int Level;
         protected double Health;
+        protected double MaxHealth;
         protected double Mana;
+        protected double MaxMana;
         protected double Strengh;
         protected double Armor;
         protected double MagicArmor;
@@ -23,21 +25,45 @@ namespace RPGConsole.Project.Units
 
         protected List<Effect> Effects;
         protected List<Item> Items;
-        protected List<Armor> Equipment;
+        protected List<Armor> Equipments;
         protected List<Spell> Spells;
 
-        protected bool IsConfused;
+        protected bool Confused;
+
+
+        #region Stats Getters
+        public string GetName() { return Name; }
+        public int GetLevel() { return Level; }
+        public double GetHealth() { return Health; }
+        public double GetMana() { return Mana; }
+        public double GetStrengh() { return Strengh; }
+        public double GetArmor() { return Armor; }
+        public double GetMagicArmor() { return MagicArmor; }
+        public double GetWeight() { return Weight; }
+        public double GetSpeed() { return Speed; }
+        public List<Effect> GetEffects() { return Effects; }
+        public List<Item> GetItems() { return Items; }
+        public List<Armor> GetEquipment() { return Equipments; }
+        public List<Spell> GetSpells() { return Spells; }
+        public bool IsConfused() { return Confused; }
+        #endregion
+        #region Stats Setters
+
+        #endregion
+
+
+
+
 
         public Entity(string Name, int Level)
         {
             Items = new List<Item>();
             Effects = new List<Effect>();
-            Equipment = new List<Armor>();
+            Equipments = new List<Armor>();
             Spells = new List<Spell>();
             this.Name = Name;
             this.Level = Level;
         }
-
         public void Attack()
         {
         }
@@ -48,10 +74,6 @@ namespace RPGConsole.Project.Units
         public void Defend()
         {
 
-        }
-        public List<Effect> GetEffects()
-        {
-            return Effects;
         }
         public bool IsDead()
         {
