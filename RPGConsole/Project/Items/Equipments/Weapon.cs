@@ -7,24 +7,18 @@ namespace RPGConsole.Project.Items.Equipments
 {
     class Weapon
     {
-        string Type;
-        WeaponClass Class;
-
+        KeyValuePair<string, WeaponClass> Type;
         public Weapon()
         {
         }
-        public string GetName()
+
+        public KeyValuePair<string, WeaponClass> GetInfo()
         {
             return Type;
         }
-        public WeaponClass GetClass()
-        {
-            return Class;
-        }
-        public void Init(string Type, WeaponClass Class)
+        public void Init(KeyValuePair<string, WeaponClass> Type)
         {
             this.Type = Type;
-            this.Class = Class;
         }
     }
 }

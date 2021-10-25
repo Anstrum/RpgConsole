@@ -10,6 +10,7 @@ namespace RPGConsole.Project.Units.Class
     {
         public Barbarian(string Name) : base(Name)
         {
+            Class = CharacterClass.Barbarian;
             WeaponClass.Add(Enums.WeaponClass.OneHanded);
         }
     }

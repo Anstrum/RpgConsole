@@ -10,6 +10,7 @@ namespace RPGConsole.Project.Units.Class
     {
         public Mage(string Name) : base(Name)
         {
+            Class = CharacterClass.Mage;
             WeaponClass.Add(Enums.WeaponClass.Magical);
             WeaponClass.Add(Enums.WeaponClass.Ranged);
         }

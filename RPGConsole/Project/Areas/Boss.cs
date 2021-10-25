@@ -6,9 +6,9 @@ using RPGConsole.Project.Enums;
 
 namespace RPGConsole.Project.Areas
 {
-    class City : Area
+    class Boss : Area
     {
-        public City(Vector2 Position, AreaType Type) : base(Position, AreaType.City)
+        public Boss(Vector2 Position, AreaType Type) : base(Position, AreaType.City)
         {
 
         }

@@ -52,9 +52,9 @@ namespace RPGConsole.Project.Units
         public Weapon GetWeapon() { return Weapon; }
         #endregion
         #region Stats Setters
-        public void SetWeapon(string WeaponType, WeaponClass Class) 
+        public void SetWeapon(KeyValuePair<string, WeaponClass> weapon) 
         { 
-            this.Weapon.Init(WeaponType, Class); 
+            this.Weapon.Init(weapon); 
         }
         #endregion
 

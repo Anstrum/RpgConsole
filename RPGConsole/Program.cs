@@ -10,8 +10,10 @@ namespace RPGConsole
     class Program
     {
         static Game Game;
+        public static Map Map;
         static void Main(string[] args)
         {
+            Map = new Map(100);
             if(Asker.AskChoice(new List<string>() {"Oui", "Non"}, "Voulez vous activer le débug ?") == 0)
             {
                 Debug.Activate();
@@ -25,7 +27,6 @@ namespace RPGConsole
 
 
             DifficultyLevel Difficulty;
-                
             switch(Asker.AskChoice(new List<string>() {"Easy", "Normal", "Hard"}, "Choose a difficulty"))
             {
                 case 0:
@@ -44,21 +45,30 @@ namespace RPGConsole
             }
             Console.Clear();
 
-            int Length = 0;
 
+
+            int Length = 0;
             switch(Asker.AskChoice(new List<string>() { "20 Rooms", "50 Rooms", "100 Rooms" }, "Choose a game length"))
             {
-                case 0: case 1: case 2:
-                    Length = 10;
+                case 0:
+                    Length = 20;
+                    break;
+                case 1:
+                    Length = 50;
+                    break;
+                case 2:
+                    Length = 100;
                     break;
             }
             Console.Clear();
+
 
             Console.WriteLine("Game: " + Name);
             Console.WriteLine("Difficulty: " + Difficulty);
             Console.WriteLine("Length: " + Length);
             Asker.WaitKey();
             Console.Clear();
+
 
             Game.Init(Name, Difficulty, Length);
             Debug.Print("Game Init Success");

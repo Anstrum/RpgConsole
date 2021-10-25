@@ -10,6 +10,7 @@ namespace RPGConsole.Project.Units.Class
     {
         public Trapper(string Name) : base(Name)
         {
+            Class = CharacterClass.Trapper;
             WeaponClass.Add(Enums.WeaponClass.OneHanded);
             WeaponClass.Add(Enums.WeaponClass.Ranged);
         }

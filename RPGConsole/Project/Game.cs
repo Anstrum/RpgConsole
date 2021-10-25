@@ -29,9 +29,11 @@ namespace RPGConsole.Project
 
         public void Init(string Name, DifficultyLevel Difficulty, int GameDuration)
         {
+
+
             this.Name = Name;
             this.Difficulty = Difficulty;
-            //Map = new Map(GameDuration);
+            Map = new Map(GameDuration);
             int TeamSize = Asker.AskChoice(new List<string>() { "1", "2", "3", "4" }, "Select team size:");
             for (int i = 0; i < TeamSize + 1;  i++)
             {
@@ -42,15 +44,13 @@ namespace RPGConsole.Project
                 Console.Clear();
                 CreateCharacter();
             }
-
             Console.Clear();
-
             foreach (Character Character in Characters)
             {
                 Console.WriteLine("Character: " + Character.GetName());
                 Console.WriteLine("Class: " + Character.GetClass());
-                Console.WriteLine("Weapon: " + Character.GetWeapon().GetName()) ;
-                Console.WriteLine("Weapon Class: " + Character.GetWeapon().GetClass().ToString());
+                Console.WriteLine("Weapon: " + Character.GetWeapon().GetInfo().Key) ;
+                Console.WriteLine("Weapon Class: " + Character.GetWeapon().GetInfo().Value.ToString());
                 Asker.WaitKey();
                 Console.Clear();
             }
@@ -70,9 +70,7 @@ namespace RPGConsole.Project
 
             Answer = Asker.AskChoice(Choices, "Select your class");
             Class = (CharacterClass)Enum.Parse(typeof(CharacterClass), Enum.GetNames(typeof(CharacterClass))[Answer]);
-
-            Characters.Add(new Barbarian(Name));
-
+            
             switch(Class)
             {
                 case CharacterClass.Alchemist:
@@ -125,7 +123,16 @@ namespace RPGConsole.Project
             }
 
             int WeaponId = Asker.AskChoice(Choices, "Select a weapon");
-            //Créer une arme
+            foreach(KeyValuePair<string, WeaponClass> weapon in Weapons.WeaponList)
+            {
+                if (weapon.Key == Choices[WeaponId])
+                {
+                    Characters[Characters.Count - 1].SetWeapon(weapon);
+                    return;
+                }
+            }
+            Console.WriteLine("AAA");
+            Console.ReadKey();
         }
     }
 }

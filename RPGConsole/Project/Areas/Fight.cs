@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Numerics;
+
+using RPGConsole.Project.Enums;
 
 namespace RPGConsole.Project.Areas
 {
-    class Fight
+    class Fight : Area
     {
+        public Fight(Vector2 Position, AreaType Type) : base(Position, AreaType.City)
+        {
+
+        }
     }
 }
