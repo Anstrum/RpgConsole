@@ -21,39 +21,10 @@ namespace RPGConsole.Project
 
         private void Generate()
         {
-            Random Random = new Random();
-
-            Areas.Clear();
-            Area CurrentArea = new Area(new Vector2(0, 0), AreaType.Spawn);
-            Areas.Add(CurrentArea);
-            Areas[0].SetPath(true, true, true);
-
-            Areas.
-
-            }
         }
         public void Draw()
         {
 
-        }
-        public Area CreateArea(Vector2 Position, Random Random)
-        {
-            AreaType NextType;
-            double Value = Random.NextDouble();
-            if (Value < 0.66)
-            {
-                NextType = AreaType.Fight;
-            }
-            else if (Value < 0.75)
-            {
-                NextType = AreaType.City;
-            }
-            else
-            {
-                NextType = AreaType.Boss;
-            }
-
-            return new Area(Position, NextType);
         }
 
 
