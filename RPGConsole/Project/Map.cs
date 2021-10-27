@@ -11,7 +11,7 @@ namespace RPGConsole.Project
     {
         private int GameDuration;
         private List<Area> Areas = new List<Area>();
-        private char[,] TableMap;
+        private Area[,] TableMap;
         public Map(int GameDuration)
         {
             this.GameDuration = GameDuration;
@@ -22,14 +22,21 @@ namespace RPGConsole.Project
 
         private void Generate()
         {
-            TableMap = new char[GameDuration * 2, 19];
-            for(int i = 0; i < GameDuration * 2; i++)
+            TableMap = new Area[GameDuration, 17];
+            for(int i = 0; i < GameDuration; i++)
             {
-                for(int j = 0; j < 19; j++)
+                for(int j = 0; j < 17; j++)
                 {
-                    TableMap[i,j] = ' ';
+                    TableMap[i,j] = null;
                 }
             }
+
+
+            TableMap[0, 4] = new Area(new Vector2(0, 4), AreaType.Spawn);
+            TableMap[1, 3] = new Area(new Vector2(1, 3), AreaType.Fight);
+            TableMap[1, 4] = new Area(new Vector2(1, 4), AreaType.Fight);
+            TableMap[1, 5] = new Area(new Vector2(1, 5), AreaType.Fight);
+
         }
         public void Draw()
         {
