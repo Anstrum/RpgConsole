@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 
+using RPGConsole.Project.Misc;
 using RPGConsole.Project.Areas;
 using RPGConsole.Project.Enums;
 
@@ -9,47 +10,54 @@ namespace RPGConsole.Project
 {
     class Map
     {
+
         private int GameDuration;
         private List<Area> Areas = new List<Area>();
-        private Area[,] TableMap;
-        public Map(int GameDuration)
+        public Map(int GameDuration, int Seed)
         {
             this.GameDuration = GameDuration;
-            Generate();
+            Generate(GameDuration, Seed);
             Draw();
             Console.ReadKey();
         }
-
-        private void Generate()
-        {
-            TableMap = new Area[GameDuration, 17];
-            for(int i = 0; i < GameDuration; i++)
-            {
-                for(int j = 0; j < 17; j++)
-                {
-                    TableMap[i,j] = null;
-                }
-            }
-
-
-            TableMap[0, 4] = new Area(new Vector2(0, 4), AreaType.Spawn);
-            TableMap[1, 3] = new Area(new Vector2(1, 3), AreaType.Fight);
-            TableMap[1, 4] = new Area(new Vector2(1, 4), AreaType.Fight);
-            TableMap[1, 5] = new Area(new Vector2(1, 5), AreaType.Fight);
-
-        }
         public void Draw()
         {
-
+            Console.WriteLine("There is the map:");
+            foreach(Area Area in Areas)
+            {
+                Console.WriteLine("Floor: " + Area.GetPosition() + " | Room Type: " + Area.GetInfo().ToString());
+            }
         }
+        private void Generate(int GameDuration, int Seed)
+        {
+            Areas.Clear();
+            Areas.Add(new Area(AreaType.Spawn, 0));
+            Areas.Add(new Area(AreaType.Fight, 1));
 
-        public void CreateArea(Vector2 Position, AreaType Type, bool LeftPath, bool RightPath, bool DownPath)
-        {
-            Areas.Add(new Area(Position, Type, LeftPath, RightPath, DownPath));
-        }
-        public void CreateArea(Vector2 Position, AreaType Type)
-        {
-            Areas.Add(new Area(Position, Type));
+            int CityCount = 1;
+            int BossCount = 1;
+            Random Random = new Random(Seed);
+            for (int i = 2; i < GameDuration; i++)
+            {
+                if(CityCount > 3 && Random.NextDouble() < 0.3 || CityCount > 9)
+                {
+                    Areas.Add(new Area(AreaType.City, i));
+                    CityCount = 0;
+                    BossCount++;
+                    continue;
+                }
+                if(BossCount > 2 && Random.NextDouble() < 0.3 || BossCount > 5)
+                {
+                    Areas.Add(new Area(AreaType.Boss, i));
+                    BossCount = 0;
+                    CityCount++;
+                    continue;
+                }
+                Areas.Add(new Area(AreaType.Fight, i));
+                BossCount++;
+                CityCount++;
+            }
+            Debug.Print("Map Created");
         }
         public AreaType GetRandomAreaType(Random Random)
         {
@@ -69,40 +77,18 @@ namespace RPGConsole.Project
             }
         }
         #region Area Ask
-        public List<Area> GetAreasByNumber(int RoomNuber)
+        public Area GetArea(int Position)
         {
-            List<Area> MatchingAreas = new List<Area>();
             foreach(Area Area in Areas)
             {
-                if(Area.GetInfo().Key.X == RoomNuber)
+                if(Area.GetPosition() == Position)
                 {
-                    MatchingAreas.Add(Area);
-                }
-            }
-            return MatchingAreas;
-        }
-        public bool IsDupe(Vector2 Position)
-        {
-            foreach(Area MyArea in GetAreasByNumber(Convert.ToInt32(Position.X)))
-            {
-                if(MyArea.GetInfo().Key.Y == Position.Y)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public Area GetAreaByPosition(Vector2 Position)
-        {
-            foreach(Area MyArea in Areas)
-            {
-                if(MyArea.GetInfo().Key == Position)
-                {
-                    return MyArea;
+                    return Area;
                 }
             }
             return null;
         }
+
         #endregion
     }
 }

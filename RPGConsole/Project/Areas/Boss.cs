@@ -8,7 +8,7 @@ namespace RPGConsole.Project.Areas
 {
     class Boss : Area
     {
-        public Boss(Vector2 Position, AreaType Type) : base(Position, AreaType.City)
+        public Boss(AreaType Type, int Position) : base(AreaType.City, Position)
         {
 
         }

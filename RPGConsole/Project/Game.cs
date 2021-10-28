@@ -26,14 +26,12 @@ namespace RPGConsole.Project
         {
             return Ended;
         }
-
+        #region Init
         public void Init(string Name, DifficultyLevel Difficulty, int GameDuration)
         {
-
-
             this.Name = Name;
             this.Difficulty = Difficulty;
-            Map = new Map(GameDuration);
+            Map = new Map(GameDuration, Converter.AnyToInt(Name));
             int TeamSize = Asker.AskChoice(new List<string>() { "1", "2", "3", "4" }, "Select team size:");
             for (int i = 0; i < TeamSize + 1;  i++)
             {
@@ -55,7 +53,7 @@ namespace RPGConsole.Project
                 Console.Clear();
             }
         }
-
+        
 
         void CreateCharacter()
         {
@@ -134,5 +132,7 @@ namespace RPGConsole.Project
             Console.WriteLine("AAA");
             Console.ReadKey();
         }
+
+        #endregion
     }
 }

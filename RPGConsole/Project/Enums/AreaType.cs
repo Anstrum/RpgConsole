@@ -10,5 +10,6 @@ namespace RPGConsole.Project.Enums
         City,
         Boss,
         Spawn,
+        Empty,
     }
 }

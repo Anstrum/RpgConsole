@@ -10,10 +10,8 @@ namespace RPGConsole
     class Program
     {
         static Game Game;
-        public static Map Map;
         static void Main(string[] args)
         {
-            Map = new Map(100);
             if(Asker.AskChoice(new List<string>() {"Oui", "Non"}, "Voulez vous activer le débug ?") == 0)
             {
                 Debug.Activate();

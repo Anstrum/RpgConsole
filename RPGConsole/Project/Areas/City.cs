@@ -8,7 +8,7 @@ namespace RPGConsole.Project.Areas
 {
     class City : Area
     {
-        public City(Vector2 Position, AreaType Type) : base(Position, AreaType.City)
+        public City(AreaType Type, int Position) : base(AreaType.City, Position)
         {
 
         }
