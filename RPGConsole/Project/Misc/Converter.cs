@@ -14,8 +14,6 @@ namespace RPGConsole.Project.Misc
             {
                 Value += (int) C;
             }
-            Console.WriteLine(Value);
-            Console.ReadKey();
             return Value;
         }
     }

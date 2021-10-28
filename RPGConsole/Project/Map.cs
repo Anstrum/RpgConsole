@@ -10,15 +10,11 @@ namespace RPGConsole.Project
 {
     class Map
     {
-
         private int GameDuration;
         private List<Area> Areas = new List<Area>();
-        public Map(int GameDuration, int Seed)
+        public Map(int GameDuration)
         {
             this.GameDuration = GameDuration;
-            Generate(GameDuration, Seed);
-            Draw();
-            Console.ReadKey();
         }
         public void Draw()
         {
@@ -28,7 +24,7 @@ namespace RPGConsole.Project
                 Console.WriteLine("Floor: " + Area.GetPosition() + " | Room Type: " + Area.GetInfo().ToString());
             }
         }
-        private void Generate(int GameDuration, int Seed)
+        public void Generate(int GameDuration)
         {
             Areas.Clear();
             Areas.Add(new Area(AreaType.Spawn, 0));
@@ -36,7 +32,7 @@ namespace RPGConsole.Project
 
             int CityCount = 1;
             int BossCount = 1;
-            Random Random = new Random(Seed);
+            Random Random = new Random(Converter.AnyToInt(DateTime.Now.ToString()));
             for (int i = 2; i < GameDuration; i++)
             {
                 if(CityCount > 3 && Random.NextDouble() < 0.3 || CityCount > 9)

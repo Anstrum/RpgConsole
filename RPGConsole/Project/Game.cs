@@ -31,18 +31,54 @@ namespace RPGConsole.Project
         {
             this.Name = Name;
             this.Difficulty = Difficulty;
-            Map = new Map(GameDuration, Converter.AnyToInt(Name));
+
+            Map = new Map(GameDuration);
+            List<string> Choices = new List<string>() {"Oui", "Non", "Revoir la map" };
+            int Choice = 4;
+            bool Regenerate = true;
+            bool ShowMap = true;
+            do
+            {
+                if(Regenerate)
+                {
+                    Map.Generate(GameDuration);
+                    Regenerate = false;
+                }
+                if(ShowMap)
+                {
+                    Map.Draw();
+                    Asker.WaitKey();
+                    ShowMap = false;
+                }
+
+                Choice = Asker.AskChoice(Choices, "Do you want to use this map:");
+
+                switch(Choice)
+                {
+                    case 1:
+                        Regenerate = true;
+                        ShowMap = true;
+                        break;
+                    case 2:
+                        ShowMap = true;
+                        break;
+                }
+                Console.Clear();
+            } while (Choice != 0);
+
+
+
             int TeamSize = Asker.AskChoice(new List<string>() { "1", "2", "3", "4" }, "Select team size:");
             for (int i = 0; i < TeamSize + 1;  i++)
             {
                 Console.Clear();
-
                 Console.WriteLine("Character " + (i+1) + " Create your character");
                 Asker.WaitKey();
                 Console.Clear();
                 CreateCharacter();
             }
             Console.Clear();
+
             foreach (Character Character in Characters)
             {
                 Console.WriteLine("Character: " + Character.GetName());
