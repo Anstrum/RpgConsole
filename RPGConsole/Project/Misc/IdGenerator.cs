@@ -13,7 +13,11 @@ namespace RPGConsole.Project.Misc
         {
             GeneratedIds.Clear();
             AuthorizedChars.Clear();
+            GenerateAuthorizedChars();
 
+        }
+        private static void GenerateAuthorizedChars()
+        {
 
         }
         public static string CreateId()
