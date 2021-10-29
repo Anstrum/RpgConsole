@@ -22,10 +22,7 @@ namespace RPGConsole.Project
         private bool Ended;
         private List<Character> Characters = new List<Character>();
 
-        public bool IsOver()
-        {
-            return Ended;
-        }
+
         #region Init
         public void Init(string Name, DifficultyLevel Difficulty, int GameDuration)
         {
@@ -170,5 +167,19 @@ namespace RPGConsole.Project
         }
 
         #endregion
+        #region Run
+        public void Run()
+        {
+
+        }
+        #endregion
+        #region Misc
+        public bool IsOver()
+        {
+            return Ended;
+        }
+        #endregion
+
     }
 }
+
