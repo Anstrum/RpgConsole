@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPGConsole.Project.Menus
 {
-    class MainMenu : Menu
+    class PrefightMenu : Menu
     {
     }
 }

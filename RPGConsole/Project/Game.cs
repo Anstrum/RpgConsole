@@ -20,7 +20,7 @@ namespace RPGConsole.Project
         private DifficultyLevel Difficulty;
         private Map Map;
         private bool Ended;
-        private List<Character> Characters = new List<Character>();
+       private List<Character> Characters = new List<Character>();
 
 
         #region Init

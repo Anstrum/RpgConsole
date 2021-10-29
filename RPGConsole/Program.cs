@@ -13,7 +13,7 @@ namespace RPGConsole
         static bool InitGame = true;
         static void Main(string[] args)
         {
-
+            IdGenerator.Init();
             if(Asker.AskChoice(new List<string>() {"Oui", "Non"}, "Voulez vous activer le débug ?") == 0)
             {
                 Debug.Activate();

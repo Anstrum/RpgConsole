@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cyril\\Desktop\\RpgConsole\\RPGConsole\\RPGConsole.csproj",
+      "projectUniqueName": "C:\\Users\\cyril\\Desktop\\Professionnel\\Projets\\RpgConsole\\RPGConsole\\RPGConsole.csproj",
       "projectName": "RPGConsole",
-      "projectPath": "C:\\Users\\cyril\\Desktop\\RpgConsole\\RPGConsole\\RPGConsole.csproj",
+      "projectPath": "C:\\Users\\cyril\\Desktop\\Professionnel\\Projets\\RpgConsole\\RPGConsole\\RPGConsole.csproj",
       "packagesPath": "C:\\Users\\cyril\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cyril\\Desktop\\RpgConsole\\RPGConsole\\obj\\",
+      "outputPath": "C:\\Users\\cyril\\Desktop\\Professionnel\\Projets\\RpgConsole\\RPGConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
