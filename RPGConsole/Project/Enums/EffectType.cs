@@ -12,6 +12,7 @@ namespace RPGConsole.Project.Effects
         Stunned,
         Poisoned,
         ArmorBroken,
+        Cursed,
         Blessed,
     }
 }

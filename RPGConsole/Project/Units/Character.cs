@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using RPGConsole.Project.Enums;
+using RPGConsole.Project.Misc;
 
 namespace RPGConsole.Project.Units
 {
@@ -12,8 +13,7 @@ namespace RPGConsole.Project.Units
         protected List<WeaponClass> WeaponClass;
         private double Experience;
         private double ExperienceToMax;
-
-        public Character(string Name) : base(Name, 1)
+        public Character(string Name) : base(Name, 1, IdGenerator.CreateId())
         {
             WeaponClass = new List<WeaponClass>();
             Experience = 0;
@@ -21,14 +21,8 @@ namespace RPGConsole.Project.Units
         }
 
     #region Getter
-        public CharacterClass GetClass()
-        {
-            return Class;
-        }
-        public List<WeaponClass> GetWeaponClass()
-        {
-            return WeaponClass;
-        }
+        public CharacterClass GetClass() { return Class; }
+        public List<WeaponClass> GetWeaponClass() { return WeaponClass; }
     #endregion
     }
 }

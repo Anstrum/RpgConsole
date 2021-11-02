@@ -6,5 +6,9 @@ namespace RPGConsole.Project.Effects
 {
     class Frozen : Effect
     {
+        public Frozen(int Power) : base(EffectType.Frozen, Power)
+        {
+
+        }
     }
 }

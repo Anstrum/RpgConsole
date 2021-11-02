@@ -7,6 +7,7 @@ using RPGConsole.Project.Spells;
 using RPGConsole.Project.Items;
 using RPGConsole.Project.Items.Equipments;
 using RPGConsole.Project.Enums;
+using RPGConsole.Project.Misc;
 
 namespace RPGConsole.Project.Units
 {
@@ -23,16 +24,14 @@ namespace RPGConsole.Project.Units
         protected double MagicArmor;
         protected double Weight;
         protected double Speed;
-
+        protected ObjectId Id;
         protected List<Effect> Effects;
-        protected List<Item> Items;
-        protected List<Armor> Equipments;
+        private Inventory Inventory;
         protected List<Spell> Spells;
 
-        protected Weapon Weapon;
+        protected Weapon WeaponId;
 
         protected bool Confused;
-
 
         #region Stats Getters
         public string GetName() { return Name; }
@@ -45,35 +44,29 @@ namespace RPGConsole.Project.Units
         public double GetWeight() { return Weight; }
         public double GetSpeed() { return Speed; }
         public List<Effect> GetEffects() { return Effects; }
-        public List<Item> GetItems() { return Items; }
-        public List<Armor> GetEquipment() { return Equipments; }
         public List<Spell> GetSpells() { return Spells; }
         public bool IsConfused() { return Confused; }
-        public Weapon GetWeapon() { return Weapon; }
+        public string GetId() { return Id.ToString(); }
         #endregion
         #region Stats Setters
-        public void SetWeapon(KeyValuePair<string, WeaponClass> weapon) 
+        public void SetWeapon(KeyValuePair<string, WeaponClass> Weapon) 
         { 
-            this.Weapon.Init(weapon); 
+            this.Inventory.AddItem(new Weapon(Weapon.Key, Weapon.Value)); 
         }
         #endregion
 
-
-
-
-
-        public Entity(string Name, int Level)
+        public Entity(string Name, int Level, string Id)
         {
-            Items = new List<Item>();
-            Effects = new List<Effect>();
-            Equipments = new List<Armor>();
-            Spells = new List<Spell>();
-            Weapon = new Weapon();
+            this.Id = new ObjectId(Id);
+            this.Effects = new List<Effect>();
+            this.Spells = new List<Spell>();
+            this.Inventory = new Inventory(IdGenerator.CreateId());
             this.Name = Name;
             this.Level = Level;
         }
         public void Attack()
         {
+
         }
         public void Heal()
         {
@@ -83,9 +76,7 @@ namespace RPGConsole.Project.Units
         {
 
         }
-        public bool IsDead()
-        {
-            return Health <= 0;
-        }
+        public bool IsDead() { return Health <= 0; }
+        public Inventory GetInventory() { return Inventory; }
     }
 }

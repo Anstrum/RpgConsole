@@ -4,6 +4,7 @@ using System.Text;
 
 using RPGConsole.Project;
 using RPGConsole.Project.Misc;
+using RPGConsole.Project.Items.Equipments;
 using RPGConsole.Project.Enums;
 using RPGConsole.Project.Units;
 using RPGConsole.Project.Units.Class;
@@ -20,7 +21,7 @@ namespace RPGConsole.Project
         private DifficultyLevel Difficulty;
         private Map Map;
         private bool Ended;
-       private List<Character> Characters = new List<Character>();
+        private List<Character> Characters = new List<Character>();
 
 
         #region Init
@@ -80,8 +81,12 @@ namespace RPGConsole.Project
             {
                 Console.WriteLine("Character: " + Character.GetName());
                 Console.WriteLine("Class: " + Character.GetClass());
-                Console.WriteLine("Weapon: " + Character.GetWeapon().GetInfo().Key) ;
-                Console.WriteLine("Weapon Class: " + Character.GetWeapon().GetInfo().Value.ToString());
+                Weapon Weapon = Character.GetInventory().GetEquipedWeapon();
+                if (Weapon != null)
+                {
+                    Console.WriteLine("Weapon: " + Weapon.GetInfo().Key);
+                    Console.WriteLine("Weapon Class: " + Weapon.GetInfo().Value.ToString());
+                }
                 Asker.WaitKey();
                 Console.Clear();
             }
@@ -158,11 +163,10 @@ namespace RPGConsole.Project
             {
                 if (weapon.Key == Choices[WeaponId])
                 {
-                    Characters[Characters.Count - 1].SetWeapon(weapon);
+                    Characters[Characters.Count - 1].GetInventory().AddItem(new Weapon(weapon.Key, weapon.Value, true));
                     return;
                 }
             }
-            Console.WriteLine("AAA");
             Console.ReadKey();
         }
 
@@ -170,7 +174,9 @@ namespace RPGConsole.Project
         #region Run
         public void Run()
         {
-
+            Characters.Add(new Barbarian("Nanaka"));
+            Characters[0].GetInventory().AddItem(new Weapon("DoubleAxe", WeaponClass.OneHanded));
+            Debug.Print("New " + Characters[0].GetClass().ToString() + " created with Weapon: " + Characters[0].GetInventory().GetEquipedWeapon().GetInfo().Key);
         }
         #endregion
         #region Misc

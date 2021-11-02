@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+using RPGConsole.Project.Effects.Applicators;
+
+
 namespace RPGConsole.Project.Effects
 {
     class Effect
@@ -9,8 +12,10 @@ namespace RPGConsole.Project.Effects
         private EffectType Type;
         private bool IsInstant;
         private int TurnCount;
+        private List<Applicator> Applicators;
 
-        public Effect()
+
+        public Effect(EffectType Type, int Power)
         {
 
         }

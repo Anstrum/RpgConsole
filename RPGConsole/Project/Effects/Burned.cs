@@ -4,7 +4,11 @@ using System.Text;
 
 namespace RPGConsole.Project.Effects
 {
-    class Burned : Effect
+    class Burnt : Effect
     {
+        public Burnt(int Power) : base(EffectType.Burnt, Power)
+        {
+
+        }
     }
 }

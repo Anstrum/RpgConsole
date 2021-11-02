@@ -6,5 +6,9 @@ namespace RPGConsole.Project.Effects
 {
     class ArmorBroken : Effect
     {
+        public ArmorBroken(int Power) : base(EffectType.ArmorBroken, Power)
+        {
+
+        }
     }
 }

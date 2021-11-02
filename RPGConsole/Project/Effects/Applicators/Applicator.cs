@@ -6,5 +6,9 @@ namespace RPGConsole.Project.Effects.Applicators
 {
     class Applicator
     {
+        public Applicator()
+        {
+
+        }
     }
 }
